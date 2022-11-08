@@ -11,6 +11,11 @@ if(isset($_GET['ctl']))
 			  case 'utilisateur' :
 				include 'controleur/ctlUtilisateur.php';
 
+				break;
+
+			case 'vehicule' :
+				include 'controleur/ctlVehicule.php';
+
 				break;	
 		}
 

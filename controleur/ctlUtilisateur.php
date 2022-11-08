@@ -19,7 +19,7 @@ switch($action){
              {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
-
+                
                 $user = DbUtilisateur::getUser($email,$password);
                 
                 if(is_array($user))
@@ -29,7 +29,8 @@ switch($action){
                 }
                 else
                 {
-                    echo "<script>window.location.replace('index.php?msg=Email ou mot de passe incorrect');</script>";
+                    $message="Login ou mot de passe incorrect, veuillez réessayer.";
+                    header('Location: index.php');
                 }
             }
 			 //appel à la vue
@@ -55,6 +56,18 @@ switch($action){
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
                 
             break;
+
+
+            case 'listervehicule':
+                //appel à la base de donnée le model
+                $email = $_SESSION['email'];
+                $listeVehicule = DbUtilisateur::getListeVehicule($email);
+                
+                //appel à la vue
+                include 'vue/vueUtilisateur/list_utilisateurs.php';
+                
+            break;
+
 		}
 
 ?>
