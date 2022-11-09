@@ -29,8 +29,7 @@ switch($action){
                 }
                 else
                 {
-                    $message="Login ou mot de passe incorrect, veuillez réessayer.";
-                    header('Location: index.php');
+                    echo "<script>window.location.replace('index.php?msg=Email ou mot de passe incorrect');</script>";
                 }
             }
 			 //appel à la vue
