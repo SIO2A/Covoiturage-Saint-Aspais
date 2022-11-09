@@ -15,7 +15,7 @@ if(!isset($_SESSION['email'])){
                                     <img class="logo" src="vue/images/logo.png">
                                         <h1>Bienvenue</h1> 
                                             <p class="text-muted">Veuillez rentrer vos identifiants</p> 
-                                                <?php if(isset($message)) echo "<p style='color: white;'>".$message."</p>";?>
+                                            <?php if(isset($_GET['msg'])) { echo "<p style='color: #b1b8ff; text-align: center;'>".$_GET['msg']."</p>";} ?>
                                                     <input type="text" name="email" placeholder="Email" required="required"> 
                                                         <input type="password" name="password" placeholder="Mot-de-passe" required="required"> 
                                                             <input type="submit" name="" value="Login" href="#"> 
