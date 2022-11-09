@@ -191,7 +191,21 @@
         border: 0.5px solid white;
     }
 
-    
+    p#NP{
+        margin-left: 72px;
+    }
+
+    p#NP2{
+        margin-left: 59px;
+    }
+
+    p#NP2{
+        margin-left: 59px;
+    }
+
+    p#NP3{
+        margin-left: 89px;
+    }
 
     /* responsive */
 
