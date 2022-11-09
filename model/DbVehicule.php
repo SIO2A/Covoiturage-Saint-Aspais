@@ -5,20 +5,13 @@ class DbVehicule{
 
     public static function ajoutVehicule($matricule, $marque, $nb_personne, $email)
     {
-        $sql = "INSERT INTO vehicule (idvehicule, matricule, marque, nb_personne, iduser) VALUES (NULL, '$matricule', '$marque', '$nb_personne', 
+        $sql = "INSERT INTO vehicule (idvehicule, matricule, marque, nb_personne, iduser) VALUES (NULL, '$marque', '$matricule', '$nb_personne', 
         (SELECT iduser
         FROM utilisateurs
-        WHERE email='$email'));";        
+        WHERE email='$email'));";
         connectPdo::getObjPdo()->exec($sql);
     }
 
-    public static function getListeVehicule($email)
-	{
-		$sql = "select marque, matricule, nb_personne from utilisateurs, vehicule WHERE vehicule.iduser = utilisateurs.iduser AND email='$email' ";		
-		$objResultat = connectPdo::getObjPdo()->query($sql);
-		$result = $objResultat->fetchAll(); 
-		return $result;
-	}
 }
 
 ?>

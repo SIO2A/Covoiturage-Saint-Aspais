@@ -88,15 +88,15 @@
                     </div>
                   </div>
                   <div class="col-mb-8">
-                  <div class="card mb-3">
+                  <div class="card mb-3" id="2">
                     <div class="card-body">
                       <div class="row">
                         <div class="col-sm-3">
                           <p class=" text-white mb-0" id="NP">Marque :</p>
                         </div>
-                        <div class="col-sm-9">
+                        <div class="text-white col-sm-9">
                         <?php
-                        foreach($listeUtilisateur as $ligne){
+                        foreach($listeVehicule as $ligne){
                         echo "<tr>";
                         echo "<td>".$ligne['marque']."</td><br>";
                         echo "</tr>";
@@ -109,9 +109,9 @@
                         <div class="col-sm-3">
                           <p class=" text-white mb-0" id="NP2">Matricule :</p>
                         </div>
-                        <div class="col-sm-9">
+                        <div class=" text-white col-sm-9">
                         <?php
-                        foreach($listeUtilisateur as $ligne){
+                        foreach($listeVehicule as $ligne){
                         echo "<tr>";
                         echo "<td>".$ligne['matricule']."</td><br>";
                         echo "</tr>";
@@ -124,7 +124,7 @@
                         <div class="col-sm-3">
                           <p class=" text-white mb-0" id="NP3">Place :</p>
                         </div>
-                        <div class="col-sm-9">
+                        <div class="text-white col-sm-9">
                         <?php
                         foreach($listeVehicule as $ligne){
                         echo "<tr>";

@@ -156,13 +156,13 @@
     }
 
     button#menu1{
-        background-color: transparent;
+        background-color: transparent;    
+        margin-left: 6%;
     }
 
     .dropdown{
-        margin-left: 130px;
         margin-top: 10px;
-        padding-left: 24px;
+        padding-left: 30%;
     }
     
     .text-center {
@@ -205,6 +205,10 @@
 
     p#NP3{
         margin-left: 89px;
+    }
+
+    div#\32 {
+        margin-top: 5%;
     }
 
     /* responsive */
