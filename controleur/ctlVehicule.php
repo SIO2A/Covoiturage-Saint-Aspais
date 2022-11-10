@@ -6,7 +6,7 @@ $action =$_GET['action'];
 switch($action){
 
             case 'formajouter' :
-                include 'vueVehicule/ajouter.php'; 
+                include 'colorlib-booking-13/index.html'; 
             break;
 
             case 'ajout':
