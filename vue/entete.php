@@ -70,7 +70,7 @@ include 'vueUtilisateur/v_formulaire.php';
    <div>
 
 
-   
+
 <!---------------------------------------------------- RECHERCHE DE TRAJET ------------------------------------------------------->
 
 
@@ -88,7 +88,10 @@ include 'vueUtilisateur/v_formulaire.php';
                         <label for="myEmail" style="margin-top: 10%;">Ville de départ</label>
                         <input type="email" class="form-control" id="myEmail" placeholder="départ">
                      </div>
+xckscjins
 
+cscsczz
+cscsczzc
 
                      <div class="form-group col-sm-6">
                         <label for="myPassword" style="margin-top: 10%;">Ville d'arrivée</label>
