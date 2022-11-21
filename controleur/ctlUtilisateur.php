@@ -19,11 +19,13 @@ switch($action){
              {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
+                //$nom = $_POST['nom'];
 
                 $user = DbUtilisateur::getUser($email,$password);
                 
                 if(is_array($user))
                 {
+                    $_SESSION['nom'] = $user['nom'];
                     $_SESSION['email']=$email;
                     header('Location: index.php');
                 }

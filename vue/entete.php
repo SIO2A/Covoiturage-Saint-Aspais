@@ -30,7 +30,7 @@ include 'vueUtilisateur/v_formulaire.php';
                <div class="dropdown">
                <?php
                   if(isset($_SESSION['email'])){
-                     echo 'Bonjour, ',$_SESSION['email'];
+                     echo "".$_SESSION['nom'].""; //'Bonjour,';
                   }
                ?>
                   <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
