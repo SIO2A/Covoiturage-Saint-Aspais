@@ -41,7 +41,7 @@ include 'vueUtilisateur/v_formulaire.php';
                      <?php
                      if(isset($_SESSION['email'])){
                      ?>
-                     <li role="presentation"><a class= "nav-link" href='index.php?ctl=utilisateur&action=lister'>Mon Profil</a></li>
+                     <li role="presentation"><a class= "nav-link" href='index.php?ctl=utilisateur&action=listerUtilisateur'>Mon Profil</a></li>
                      <li role="presentation"><a class= "nav-link" href='index.php?ctl=vehicule&action=formajouter'>Ajouter un Véhicule</a></li>
                      <?php
                      }

@@ -19,7 +19,7 @@ switch($action){
              {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
-                
+
                 $user = DbUtilisateur::getUser($email,$password);
                 
                 if(is_array($user))
@@ -46,27 +46,16 @@ switch($action){
                 
             break;
 
-            case 'lister':
+            case 'listerUtilisateur':
                 //appel à la base de donnée le model
                 $email = $_SESSION['email'];
                 $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
                 
-                //appel à la vue
-                include 'vue/vueUtilisateur/list_utilisateurs.php';
-                
-            break;
-
-
-            case 'listervehicule':
-                //appel à la base de donnée le model
                 $email = $_SESSION['email'];
                 $listeVehicule = DbUtilisateur::getListeVehicule($email);
                 
                 //appel à la vue
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
-                
-            break;
-
-		}
+	}
 
 ?>
