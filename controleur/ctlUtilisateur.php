@@ -34,9 +34,9 @@ switch($action){
                     $message="Login ou mot de passe incorrect, veuillez réessayer.";
                     header('Location: index.php');
                 }
-            }
-			 //appel à la vue
-			 
+            }	
+            //appel à la vue
+		 
 			 break;		
 
              case 'deconnect':
@@ -50,25 +50,19 @@ switch($action){
                 
             break;
 
-            case 'lister':
+            case 'listerUtilisateur':
                 //appel à la base de donnée le model
                 $email = $_SESSION['email'];
                 $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
                 
-                //appel à la vue
-                include 'vue/vueUtilisateur/list_utilisateurs.php';
-                
-            break;
-
-
-            case 'listervehicule':
-                //appel à la base de donnée le model
                 $email = $_SESSION['email'];
                 $listeVehicule = DbUtilisateur::getListeVehicule($email);
                 
                 //appel à la vue
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
-                
+
+            case 'recherche' :
+                include 'vueRecherche/recherche.php'; 
             break;
 
 		}
