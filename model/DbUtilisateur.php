@@ -19,7 +19,13 @@ class DbUtilisateur{
 		return $result;
 	}
 
-
+	public static function getListeVehicule($email)
+	{
+		$sql = "select marque, matricule, nb_personne from utilisateurs, vehicule WHERE vehicule.iduser = utilisateurs.iduser AND email='$email' ";		
+		$objResultat = connectPdo::getObjPdo()->query($sql);
+		$result = $objResultat->fetchAll(); 
+		return $result;
+	}
 }
 
 ?>
