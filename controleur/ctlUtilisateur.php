@@ -11,8 +11,11 @@ switch($action){
 			 //appel à la vue
 			 include 'vue/vueUtilisateur/v_formulaire.php';
 			 
-			 break;		
-             
+			 break;
+
+//------------------------------------------------------ CONNECTION AU SITE -------------------------------------------------------
+   
+
              case 'validConnect':
              //appel à la base de donnée le modele
              if(isset($_POST['email'])&& isset($_POST['password']))
@@ -39,6 +42,16 @@ switch($action){
 		 
 			 break;		
 
+            
+			 //appel à la vue
+			 
+			 break;
+
+
+// ------------------------------------------------------ DECONNECTION ------------------------------------------------------------
+
+
+
              case 'deconnect':
                 //appel à la base de donnée le modele
                 session_unset();
@@ -49,6 +62,10 @@ switch($action){
                 //appel à la vue
                 
             break;
+
+
+// -------------------------------------------- AFFICHAGE UTILISATEUR ET VEHICULE ------------------------------------------------------------
+
 
             case 'listerUtilisateur':
                 //appel à la base de donnée le model
@@ -61,10 +78,42 @@ switch($action){
                 //appel à la vue
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
 
-            case 'recherche' :
-                include 'vueRecherche/recherche.php'; 
+                
+//--------------------------------------------- FORMULAIRE DE RECHERCHE DE TRAJET-------------------------------------------------------------
+            
+
+
+            case 'validRecherche':
+                
+                if(isset($_POST['d']) AND !empty($_POST['d']))
+                {
+                    $recherche = htmlspecialchars($_POST['d']);
+                    $Search = DbUtilisateur::getRechercherDepart($recherche);
+                    include 'vueRecherche/formRecherche.php';
+                    break;
+                }
+                
+                if (isset($_POST['a']) AND !empty($_POST['a']))
+                {
+                    $rechercheArrive = htmlspecialchars($_POST['a']);
+                    $Search = DbUtilisateur::getRechercherArrivee($rechercheArrive);
+                    include 'vueRecherche/formRecherche.php';
+                    break;
+                }
+
+                if (isset($_POST['date']) AND !empty($_POST['date']))
+                {
+                    $rechercheDate = htmlspecialchars($_POST['date']);
+                    $Search = DbUtilisateur::getRechercherDate($rechercheDate);
+                    include 'vueRecherche/formRecherche.php';
+                    break;
+                }
+                
             break;
 
-		}
+            case 'formRechercher' :
+                include 'vueRecherche/formRecherche.php'; 
+            break;
+	}
 
 ?>
