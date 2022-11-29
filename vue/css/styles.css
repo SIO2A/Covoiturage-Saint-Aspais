@@ -6,7 +6,6 @@
 
   body{
     font-family: 'Poppins', sans-serif;
-	background-color:#b1b8ff !important;
   }
 
   .btr{
@@ -51,10 +50,6 @@
 
   }
 
-  div#nav {
-        background-color: #03034c;
-    }
-
     /* Formulaire */
     
     .box {
@@ -62,7 +57,7 @@
         padding: 40px;
         position: absolute;
         left: 5%;
-        background: #03034c;
+        background: linear-gradient(to right, #dc2424, #4a569d);
         text-align: center;
         transition: 0.25s;
         margin-top: 160px;
@@ -103,7 +98,7 @@
         display: block;
         margin: 20px auto;
         text-align: center;
-        border: 2px solid #b1b8ff;
+        border: 2px solid #ff6a6a;
         padding: 14px 40px;
         outline: none;
         color: white;
@@ -113,7 +108,7 @@
     }
     
     .box input[type="submit"]:hover {
-        background: linear-gradient(to bottom right, #5c6aff, #293077);
+        background: linear-gradient(to right, #dc2424, #4a569d);
     }
     
     .forgot {
@@ -123,10 +118,11 @@
     .car{
         margin-top: 120px;
         width: 500px;
+        margin-left: 24%;
     }
     
     .card{
-        background-color: #03034c;
+        background: linear-gradient(to right, #dc2424, #4a569d);
         border-radius: 30px;
         margin-top: 80px;
     }
@@ -158,11 +154,12 @@
     button#menu1{
         background-color: transparent;    
         margin-left: 6%;
+        color: white;
     }
 
     .dropdown{
         margin-top: 10px;
-        padding-left: 30%;
+        padding-left: 53%;
     }
     
     .text-center {

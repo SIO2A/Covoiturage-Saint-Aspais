@@ -25,7 +25,7 @@ switch($action){
                 
                 if(is_array($user))
                 {
-                    $_SESSION['nom'] = $user['nom'];
+                    $_SESSION['prenom'] = $user['prenom'];
                     $_SESSION['email']=$email;
                     header('Location: index.php');
                 }

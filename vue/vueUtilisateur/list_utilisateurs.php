@@ -1,3 +1,8 @@
+<style>
+body {
+  background-image: url('https://zupimages.net/up/22/47/0ksr.jpg');
+}
+</style>
 <div class="container">
     <div class="main-body">
           <div class="row gutters-sm">
@@ -7,7 +12,7 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="vue/images/profile3.jpg" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4><?php foreach($listeUtilisateur as $ligne){ echo "<tr>"; echo "<p style='color: white;'><td>".$ligne['username']."</td></p>"; echo "</tr>"; } ?></h4>
+                      <h4><?php foreach($listeUtilisateur as $ligne){ echo "<tr>"; echo "<p style='color: white;'><td>".$ligne['prenom']."</td></p>"; echo "</tr>"; } ?></h4>
                       <!--<p><p class="text-secondary mb-1">Full Stack Developer</p>
                       <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                       <button class="btn btn-primary">Follow</button>
@@ -28,7 +33,7 @@
                     <?php
 				            foreach($listeUtilisateur as $ligne){
 					          echo "<tr>";
-							      echo "<td>".$ligne['username']."</td><br>";
+							      echo "<td>".$ligne['nom']," ".$ligne['prenom']."</td><br>";
 						        echo "</tr>";
 				            }
 				            ?>

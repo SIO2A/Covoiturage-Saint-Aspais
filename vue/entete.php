@@ -1,6 +1,6 @@
 <?php 
 include 'vueUtilisateur/v_formulaire.php';
-?>
+?> 
 <html>
    <head>
    <title>Covoiturage Saint Aspais</title>
@@ -18,7 +18,7 @@ include 'vueUtilisateur/v_formulaire.php';
    if(isset($_SESSION['email'])){
    ?>
   <body>
-   <div class= "container-fluid m-0">		
+   <div class= "container-fluid m-0">
          <div class="row">
          <div class ="col-3" id="nav">
          <img class="logo2" src="vue/images/logo.png">
@@ -30,7 +30,7 @@ include 'vueUtilisateur/v_formulaire.php';
                <div class="dropdown">
                <?php
                   if(isset($_SESSION['email'])){
-                     echo "".$_SESSION['nom'].""; //'Bonjour,';
+                     echo "".$_SESSION['prenom'].""; //'Bonjour,';
                   }
                ?>
                   <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
