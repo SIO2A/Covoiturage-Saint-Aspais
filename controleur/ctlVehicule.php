@@ -6,6 +6,8 @@ $action =$_GET['action'];
 switch($action){
 
             case 'formajouter' :
+                $email = $_SESSION['email'];
+                $listeVehicule = DbVehicule::getListeVehicule($email);
                 include 'FormVehicule/ajtform.php'; 
             break;
 
@@ -13,7 +15,7 @@ switch($action){
 
             $email = $_SESSION['email'];
             $marque = $_POST['marque'];
-            $matricule = $_POST['tel1']."-".$_POST['tel2']."-".$_POST['tel3'];
+            $matricule = $_POST['tel1'];
             $nb_personne = $_POST['nb_personne'];
         
                 

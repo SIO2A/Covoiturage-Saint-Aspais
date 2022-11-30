@@ -28,19 +28,19 @@
 						<form action="index.php?ctl=vehicule&action=ajout" method ='POST'>
 							<div class="form-group text-white">
 								<label for="nomVéhicule">Ajouter un véhicule : </label>
-								<select class="form-select" aria-label="Default select example">
-									<option selected>Selectionner une marque</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
-								</select>								
-								<h1 class="form-control1">
+								<input type="text" list="form-select" class="form-control" placeholder="Selectionnez votre véhicule" name="marque">
+								<datalist id="form-select" autocomplete="on" required="required" name="marque">
+									<?php 
+									foreach($listeVehicule as $ligne)
+									{
+										echo "<option value=".$ligne['marque']."-".$ligne['modele'].">".$ligne['modele']."</option>";
+									}
+									?>
+								</datalist>								
 								<h4 class="txtmat">Matricule :</h4>
-								<input style='text-align:center;' class="mat" name="tel1" type="tel" pattern="[A-Z]{2}" placeholder="AB" size="2"/> -
-   								<input style='text-align:center;' class="mat" name="tel2" type="tel" pattern="[0-9]{3}" placeholder="123" size="3"/> -
-   								<input style='text-align:center;' class="mat" name="tel3" type="tel" pattern="[A-Z]{2}" placeholder="DE" size="2"/>
+								<input style="text-align:center;background-color: #1a1a1d;color: white;" class="mat" name="tel1" type="tel" pattern="[A-Z]{2}-[0-9]{3}-[A-Z]{2}" placeholder="AB-123-CD" size="9" required ="required">
 								<h1 class="form-control2" style="height: 22px;"></h1>
-								<input type="number" name="nb_personne" class="form-control" placeholder="Nombre de personne :" style="margin-top: 5%;" value="1">
+								<input type="number" name="nb_personne" class="form-control" placeholder="Nombre de personne :" style="margin-top: 5%;" value="1" required="required">
 								<button type="submit" class="btn btn-primary">Confirmer</button>
 							 </div>
 						</form>

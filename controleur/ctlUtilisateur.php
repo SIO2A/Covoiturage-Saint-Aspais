@@ -58,6 +58,7 @@ switch($action){
                 
                 //appel à la vue
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
+                break;
 	}
 
 ?>
