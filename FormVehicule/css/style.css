@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'yorkten_slabnorm_regular';
+    src: url('insigne_-_yorkten_slab_norm_regular-webfont.woff2') format('woff2'),
+         url('insigne_-_yorkten_slab_norm_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .section {
 	height: 92vh;
 }
@@ -30,8 +39,8 @@
 	top: 0px;
 	bottom: 0px;
 	width: 310px;
-	background-image: url('../img/background2.jpg');
-	background-size: cover;
+	background-image: url(../img/voiture.gif);
+	background-size: 146%;
 	background-position: center;
 	border-radius: 5%;
 }
@@ -254,6 +263,16 @@ select.form-select {
 
 button.btn.btn-primary {
     margin-top: 5%;
+	margin-left: 36%;
+	background-color: #414141;
+	border-color: #414141;
+}
+
+button.btn.btn-primary:hover{
+	background: black;
+	border-color: black;
+
+
 }
 
 input.mat {
@@ -274,7 +293,7 @@ label {
 
 input:invalid {
 	border: red solid 3px;
-  }
+}
 
 @media only screen and (max-width: 480px) {
 	.booking-form>.booking-bg {
