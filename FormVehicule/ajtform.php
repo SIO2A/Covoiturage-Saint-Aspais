@@ -29,7 +29,7 @@
 							<div class="form-group text-white">
 								<label for="nomVéhicule">Ajouter un véhicule : </label>
 								<input type="text" list="form-select" class="form-control" placeholder="Selectionnez votre véhicule" name="marque">
-								<datalist id="form-select" autocomplete="on" required="required" name="marque">
+								<datalist id="form-select" autocomplete="on" required name="marque">
 									<?php 
 									foreach($listeVehicule as $ligne)
 									{
@@ -40,7 +40,7 @@
 								<h4 class="txtmat">Matricule :</h4>
 								<input style="text-align:center;background-color: #1a1a1d;color: white;" class="mat" name="tel1" type="tel" pattern="[A-Z]{2}-[0-9]{3}-[A-Z]{2}" placeholder="AB-123-CD" size="9" required ="required">
 								<h1 class="form-control2" style="height: 22px;"></h1>
-								<input type="number" name="nb_personne" class="form-control" placeholder="Nombre de personne :" style="margin-top: 5%;" value="1" required>
+								<input type="number" name="nb_personne" class="form-control" placeholder="Nombre de personne :" style="margin-top: 5%;" value="1" min="1" max="4" required>
 								<button type="submit" class="btn btn-primary">Confirmer</button>
 							 </div>
 						</form>
