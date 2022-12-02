@@ -21,12 +21,17 @@ class DbUtilisateur{
 
 	public static function getListeVehicule($email)
 	{
-		$sql = "select marque, matricule, nb_personne from utilisateurs, vehicule WHERE vehicule.iduser = utilisateurs.iduser AND email='$email' ";		
+		$sql = "select * from utilisateurs, vehicule WHERE vehicule.idvehicule = utilisateurs.idvehicule AND email='$email' ";		
 		$objResultat = connectPdo::getObjPdo()->query($sql);
 		$result = $objResultat->fetchAll(); 
 		return $result;
 	}
 
+	public static function validedit($marque, $matricule, $nb_personne, $id, $email)
+	{
+		$sql = "UPDATE vehicule SET marque = '$marque', matricule = '$matricule', nb_personne = '$nb_personne' WHERE vehicule.iduser = '$id' AND email='$email' ";			
+		$objResultat = connectPdo::getObjPdo()->query($sql);
+	}
 }
 
 ?>

@@ -1,5 +1,5 @@
 <style>
 body {
-  background-image: url('https://zupimages.net/up/22/47/0ksr.jpg');
+  background-image: url('vue/images/FD.jpg');
 }
 </style>

@@ -208,6 +208,19 @@
         margin-top: 5%;
     }
 
+    p.pmodal {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    p.matricule {
+        margin-top: 10px;
+    }
+    
+    p.nb_personne {
+        margin-top: 10px;
+    }
+    
     /* responsive */
 
     @media screen and (max-width: 1050px){

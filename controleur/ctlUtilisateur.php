@@ -59,6 +59,20 @@ switch($action){
                 //appel à la vue
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
                 break;
+
+            case 'validedit':
+                $email = $_SESSION['email'];
+                $id = $_POST['iduser'];
+                $marque = $_POST['marque'];
+                $matricule = $_POST['matricule'];
+                $nb_personne = $_POST['nb_personne'];
+                DbUtilisateur::validedit($marque, $matricule, $nb_personne, $id, $email);
+                $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
+                $listeVehicule = DbUtilisateur::getListeVehicule($email);
+                include 'vue/vueUtilisateur/list_utilisateurs.php';
+                
+            break;
+
 	}
 
 ?>
