@@ -5,6 +5,7 @@
 </head>
 
 <body>
+    <!--Affichage de la Map-->
     <div id="map"></div>
 
     <script
