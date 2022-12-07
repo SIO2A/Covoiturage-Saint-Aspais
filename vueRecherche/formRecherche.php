@@ -19,7 +19,7 @@
 
                   <div class="form-group">
                      <label for="query">Date de départ</label>
-                     <input type="search" class="form-control" name="date" id="date" placeholder="../../...">
+                     <input type="search" class="form-control" name="date" id="date" placeholder="./../...">
                   </div>
 
 
@@ -35,7 +35,7 @@
 
 
 
-               
+
 <!------------------------------------------------- RESULTAT DE LA RECHERCHE ----------------------------------------------------->
            
 
