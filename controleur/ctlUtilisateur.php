@@ -61,6 +61,14 @@ switch($action){
             case 'listervehicule':
                 //appel à la base de donnée le model
                 $email = $_SESSION['email'];
+<<<<<<< Updated upstream
+=======
+                $marque = $_POST['marque'];
+                $matricule = $_POST['matricule'];
+                $nb_personne = $_POST['nb_personne'];
+                DbUtilisateur::validedit($marque, $matricule, $nb_personne, $email);
+                $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
+>>>>>>> Stashed changes
                 $listeVehicule = DbUtilisateur::getListeVehicule($email);
                 
                 //appel à la vue

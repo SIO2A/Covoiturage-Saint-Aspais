@@ -20,6 +20,14 @@ class DbUtilisateur{
 	}
 
 
+<<<<<<< Updated upstream
+=======
+	public static function validedit($marque, $matricule, $nb_personne, $email)
+	{
+		$sql = "UPDATE vehicule SET marque = '$marque', matricule = '$matricule', nb_personne = '$nb_personne'";			
+		$objResultat = connectPdo::getObjPdo()->query($sql);
+	}
+>>>>>>> Stashed changes
 }
 
 ?>
