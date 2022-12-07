@@ -50,6 +50,7 @@ class DbUtilisateur{
 		$result = $objResultat->fetchAll();
 		return $result;
 	}
+	
 }
 
 ?>
