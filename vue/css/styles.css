@@ -1,0 +1,264 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+  body{
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .btr{
+  
+    border-top-right-radius: 5px !important;
+  }
+  
+  
+  .btl{
+  
+    border-top-left-radius: 5px !important;
+  }
+  
+  .btn-dark {
+      color: #fff;
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+  }
+  
+  
+  .btn-dark:hover {
+      color: #fff;
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+  }
+  
+  
+  .nav-pills{
+  
+    display:table !important;
+    width:100%;
+  }
+  
+  .nav-pills .nav-link {
+      border-radius: 0px;
+          border-bottom: 1px solid #0d6efd40;
+  
+  }
+  
+  .nav-item{
+        display: table-cell;
+
+  }
+
+    /* Formulaire */
+    
+    .box {
+        width: 500px;
+        padding: 40px;
+        position: absolute;
+        left: 5%;
+        background: linear-gradient(to right, #dc2424, #4a569d);
+        text-align: center;
+        transition: 0.25s;
+        margin-top: 160px;
+        border-radius: 30px;
+    }
+    
+    .box input[type="text"],
+    .box input[type="password"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #5c6aff;
+        padding: 10px 10px;
+        width: 250px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+    }
+    
+    .box h1 {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    
+    .box input[type="text"]:focus,
+    .box input[type="password"]:focus {
+        width: 300px;
+        border-color: #ffffff;
+    }
+    
+    .box input[type="submit"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #ff6a6a;
+        padding: 14px 40px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+    }
+    
+    .box input[type="submit"]:hover {
+        background: linear-gradient(to right, #dc2424, #4a569d);
+    }
+    
+    .forgot {
+        text-decoration: underline;
+    }
+
+    .car{
+        margin-top: 120px;
+        width: 500px;
+        margin-left: 24%;
+    }
+    
+    .card{
+        background: linear-gradient(to right, #dc2424, #4a569d);
+        border-radius: 30px;
+        margin-top: 80px;
+    }
+  
+    .wave{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    .logo{
+        width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .text-muted{
+        color: #fff !important;
+    }
+    
+    /* Formulaire Fin */
+    
+    .logo2{
+        width: 65px;
+        margin-top: 5px;
+    }
+
+    button#menu1{
+        background-color: transparent;    
+        margin-left: 6%;
+        color: white;
+    }
+
+    .dropdown{
+        margin-top: 10px;
+        padding-left: 53%;
+    }
+    
+    .text-center {
+        margin-top: 15px;
+    }
+
+    h6#mail{
+        margin-left: 89px;
+        margin-top: 2px;
+        color: #fff;
+    }
+
+    h6#np{
+        margin-left: 16px;
+        margin-top: 2px;
+        color: #fff;   
+    }
+
+    h6.mb-0 {
+        margin-left: 68px;
+        margin-top: 2px;
+        color: #fff;
+    }
+
+    hr{
+        border: 0.5px solid white;
+    }
+
+    p#NP{
+        margin-left: 72px;
+    }
+
+    p#NP2{
+        margin-left: 59px;
+    }
+
+    p#NP2{
+        margin-left: 59px;
+    }
+
+    p#NP3{
+        margin-left: 89px;
+    }
+
+    div#\32 {
+        margin-top: 5%;
+    }
+
+    p.pmodal {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    p.matricule {
+        margin-top: 10px;
+    }
+    
+    p.nb_personne {
+        margin-top: 10px;
+    }
+    
+    /* responsive */
+
+    @media screen and (max-width: 1050px){
+        .container{
+            grid-gap: 5rem;
+        }
+    }
+    
+    @media screen and (max-width: 1000px){
+        form{
+            width: 290px;
+        }
+    
+        .login-content h2{
+            font-size: 2.4rem;
+            margin: 8px 0;
+        }
+    
+        .img img{
+            width: 400px;
+        }
+    }
+    
+    @media screen and (max-width: 900px){
+        .container{
+            grid-template-columns: 1fr;
+        }
+    
+        .img{
+            display: none;
+        }
+    
+        .wave{
+            display: none;
+        }
+    
+        .login-content{
+            justify-content: center;
+        }
+    
+    }
