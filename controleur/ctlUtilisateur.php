@@ -19,11 +19,13 @@ switch($action){
              {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
+                //$nom = $_POST['nom'];
 
                 $user = DbUtilisateur::getUser($email,$password);
                 
                 if(is_array($user))
                 {
+                    $_SESSION['prenom'] = $user['prenom'];
                     $_SESSION['email']=$email;
                     header('Location: index.php');
                 }
@@ -49,6 +51,7 @@ switch($action){
             case 'listerUtilisateur':
                 //appel à la base de donnée le model
                 $email = $_SESSION['email'];
+                
                 $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
                 
                 $email = $_SESSION['email'];
@@ -56,6 +59,20 @@ switch($action){
                 
                 //appel à la vue
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
+                break;
+
+            case 'validedit':
+                $email = $_SESSION['email'];
+                $marque = $_POST['marque'];
+                $matricule = $_POST['matricule'];
+                $nb_personne = $_POST['nb_personne'];
+                DbUtilisateur::validedit($marque, $matricule, $nb_personne, $idvehicule, $iduser, $email);
+                $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
+                $listeVehicule = DbUtilisateur::getListeVehicule($email);
+                include 'vue/vueUtilisateur/list_utilisateurs.php';
+                
+            break;
+
 	}
 
 ?>

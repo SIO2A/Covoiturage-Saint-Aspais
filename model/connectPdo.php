@@ -14,6 +14,6 @@ class connectPdo
 		  self::$db ->query('SET NAMES utf8'); 
 		  self::$db->query('SET CHARACTER SET utf8');   
 		 } 
-		return self::$db; 
+		return self::$db;
     }
 }

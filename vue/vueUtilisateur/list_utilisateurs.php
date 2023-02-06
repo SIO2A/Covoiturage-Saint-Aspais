@@ -1,3 +1,8 @@
+<style>
+body {
+  background-image: url('https://zupimages.net/up/22/47/0ksr.jpg');
+}
+</style>
 <div class="container">
     <div class="main-body">
           <div class="row gutters-sm">
@@ -7,7 +12,7 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="vue/images/profile3.jpg" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4><?php foreach($listeUtilisateur as $ligne){ echo "<tr>"; echo "<p style='color: white;'><td>".$ligne['username']."</td></p>"; echo "</tr>"; } ?></h4>
+                      <h4><?php foreach($listeUtilisateur as $ligne){ echo "<tr>"; echo "<p style='color: white;'><td>".$ligne['prenom']."</td></p>"; echo "</tr>"; } ?></h4>
                       <!--<p><p class="text-secondary mb-1">Full Stack Developer</p>
                       <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                       <button class="btn btn-primary">Follow</button>
@@ -22,13 +27,13 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0" id="NP">Nom Prénom : </h6>
+                      <h6 class="mb-0" id="NP">Nom / Prénom : </h6>
                     </div>
                     <div class="col-sm-9 text-white">
                     <?php
 				            foreach($listeUtilisateur as $ligne){
 					          echo "<tr>";
-							      echo "<td>".$ligne['username']."</td><br>";
+							      echo "<td>".$ligne['nom']," ".$ligne['prenom']."</td><br>";
 						        echo "</tr>";
 				            }
 				            ?>
@@ -142,3 +147,41 @@
           </div>
         </div>
     </div>
+
+<?php
+if(isset($ligne['marque'],$ligne['matricule'],$ligne['nb_personne'])){
+?>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="
+    margin-left: 60%;
+    margin-top: 10px;
+">
+Éditer mon véhicule
+</button>
+<!-- Modal -->
+<form action="index.php?ctl=utilisateur&action=validedit" method='POST'>
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Éditer mon véhicule</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="pmodal">Choisissez la colonne que vous voulez modifier ci-dessous.</p>
+          <p class="marque">Marque : </p><input type="text" name = "marque" class="form-control" placeholder="<?php echo $ligne['marque']; ?>" required ="required">
+          <p class="matricule">Matricule : </p><input class="form-control" name="matricule" type="tel" id="mat" pattern="[A-Z]{2}-[0-9]{3}-[A-Z]{2}" placeholder="<?php echo $ligne['matricule']?>" size="9" required ="required">
+          <p class="nb_personne">Nombre de Places : </p><input type="text" class="form-control" name ="nb_personne" pattern="[0-9]{1}" placeholder="<?php echo $ligne['nb_personne']?>"required ="required">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <button type="submit" class="btn btn-primary">Confirmer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<?php
+}
+?>
