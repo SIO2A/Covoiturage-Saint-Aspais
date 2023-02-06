@@ -7,19 +7,19 @@
                   <div class="form-row">
                      <div class="form-group col-sm-6">
                         <label for="query" style="margin-top: 10%;">Ville de départ</label>
-                        <input type="search" class="form-control" name='d' id="depart" placeholder="Départ de ...">
+                        <input type="text" class="form-control" name='d' id="depart" placeholder="Départ de ...">
                      </div>
 
                      <div class="form-group col-sm-6">
                         <label for="myPassword" style="margin-top: 10%;">Ville d'arrivée</label>
-                        <input type="search" class="form-control" name="a" id="arrivee" placeholder="Arrivée à ...">
+                        <input type="text" class="form-control" name="a" id="arrivee" placeholder="Arrivée à ...">
                      </div>
                   </div>
 
 
                   <div class="form-group">
                      <label for="query">Date de départ</label>
-                     <input type="search" class="form-control" name="date" id="date" placeholder="./../...">
+                     <input type="date" class="form-control" name="date" id="date" placeholder="./../...">
                   </div>
 
 

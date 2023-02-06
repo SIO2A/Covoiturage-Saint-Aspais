@@ -60,6 +60,36 @@ switch($action){
                 //appel à la vue
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
                 break;
+
+                case 'validRecherche':
+                            
+                    if(isset($_POST['d']) AND !empty($_POST['d']))
+                    {
+                        $recherche = htmlspecialchars($_POST['d']);
+                        $Search = DbUtilisateur::getRechercherDepart($recherche);
+                        include 'vue/vueRecherche/formRecherche.php';
+                        break;
+                        
+                    }
+                    
+                    if (isset($_POST['a']) AND !empty($_POST['a']))
+                    {
+                        $rechercheArrive = htmlspecialchars($_POST['a']);
+                        $Search = DbUtilisateur::getRechercherArrivee($rechercheArrive);
+                        include 'vue/vueRecherche/formRecherche.php';
+                        break;
+                    }
+    
+                    if (isset($_POST['date']) AND !empty($_POST['date']))
+                    {
+                        echo $_POST['date'];
+                        $rechercheDate = htmlspecialchars($_POST['date']);
+                        $Search = DbUtilisateur::getRechercherDate($rechercheDate);
+                        include 'vue/vueRecherche/formRecherche.php';
+                        break;
+                    }   
+                    
+                break;
 	}
 
 ?>

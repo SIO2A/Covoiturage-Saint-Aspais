@@ -32,13 +32,30 @@ class DbUtilisateur{
 		$sql = "UPDATE vehicule SET marque = '$marque', matricule = '$matricule', nb_personne = '$nb_personne' WHERE vehicule.iduser = '$id' ";			
 		$objResultat = connectPdo::getObjPdo()->query($sql);
 	}
-	// public static function getIdbyEmail($email)
-	// {
-	// 	$sql = "select iduser from utilisateurs WHERE email='$email' ";		
-	// 	$objResultat = connectPdo::getObjPdo()->query($sql);
-	// 	$result = $objResultat->fetch(); 
-	// 	return $result;
-	// }
+
+	public static function getRechercherDepart($recherche)
+	{
+		$sql = "SELECT depart, arriver, jour, nb_place FROM annonce WHERE depart LIKE '%$recherche%'";
+		$objResultat = connectPdo::getObjPdo()->query($sql);	
+		$result = $objResultat->fetchAll();
+		return $result;
+	}
+
+	public static function getRechercherArrivee($rechercheArrive)
+	{
+		$sql = "SELECT depart, arriver, jour, nb_place FROM annonce WHERE arriver LIKE '%$rechercheArrive%'";
+		$objResultat = connectPdo::getObjPdo()->query($sql);	
+		$result = $objResultat->fetchAll();
+		return $result;
+	}
+
+	public static function getRechercherDate($rechercheDate)
+	{
+		$sql = "SELECT * FROM annonce WHERE jour >= '$rechercheDate';";
+		$objResultat = connectPdo::getObjPdo()->query($sql);	
+		$result = $objResultat->fetchAll();
+		return $result;
+	}
 }
 
 ?>
