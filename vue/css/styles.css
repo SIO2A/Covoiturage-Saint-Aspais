@@ -243,6 +243,21 @@
             width: 400px;
         }
     }
+
+        input.mat {
+            margin-top: 2%;
+        }
+    
+        h4.txtmat {
+            font-size: 17px;
+            margin-top: 14%;
+            font-weight: 600;
+            color: #5c5c5f;
+        }
+
+        input:invalid {
+            border: red solid 3px;
+        }
     
         h4.txtmat {
             font-size: 17px;
