@@ -166,10 +166,10 @@ body {
         </div>
         <div class="modal-body">
           <p class="pmodal">Choisissez la colonne que vous voulez modifier ci-dessous.</p>
-          <input type="text" name = "iduser" class="form-control" readonly value=<?php echo $ligne['idvehicule']; ?>>
           <p class="marque">Marque : </p><input type="text" name = "marque" class="form-control" placeholder="<?php echo $ligne['marque']; ?>">
           <p class="matricule">Matricule : </p><input type="text" name = "matricule" class="form-control" placeholder="<?php echo $ligne['matricule']; ?>">
-          <p class="nb_personne">Nombre de Places :</p><input type="text" name ="nb_personne" placeholder="<?php echo $ligne['nb_personne']?>">
+          <p class="nb_personne">Nombre de Places :</p><input type="text" name ="nb_personne" class="form-control" placeholder="<?php echo $ligne['nb_personne']?>">
+          <p class="idvehicule">Id :</p><input disabled type="text" name ="idvehicule" class="form-control" placeholder="<?php echo $ligne['idvehicule']?>">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -178,4 +178,11 @@ body {
       </div>
     </div>
   </div>
+<<<<<<< Updated upstream
 </form>
+=======
+</form>
+    <a class="btn btn-primary" data-mdb-toggle="offcanvas" href='index.php?ctl=utilisateur&action=formajouter' role="button"
+  aria-controls="offcanvasExample">Ajouter un véhicule
+</a>
+>>>>>>> Stashed changes

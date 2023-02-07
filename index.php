@@ -10,6 +10,7 @@ if(isset($_GET['ctl']))
 			
 			  case 'utilisateur' :
 				include 'controleur/ctlUtilisateur.php';
+<<<<<<< Updated upstream
 
 				break;
 
@@ -17,6 +18,16 @@ if(isset($_GET['ctl']))
 				include 'controleur/ctlVehicule.php';
 
 				break;	
+=======
+				break;
+			
+			case 'annonce' :
+				include 'controleur/ctlAnnonce.php';
+
+				break;
+			case 'reservation' :
+				include 'controleur/ctlReservation.php';
+>>>>>>> Stashed changes
 		}
 
 }

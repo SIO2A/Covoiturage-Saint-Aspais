@@ -60,6 +60,7 @@ switch($action){
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
                 break;
 
+<<<<<<< Updated upstream
             case 'validedit':
                 $email = $_SESSION['email'];
                 $id = $_POST['iduser'];
@@ -73,6 +74,75 @@ switch($action){
                 
             break;
 
+=======
+
+                case 'formajouter' :
+                    $email = $_SESSION['email'];
+                    $listeVehicule = DbUtilisateur::getListedbVehicule($email);
+                    include 'FormVehicule/ajtform.php'; 
+                break;
+    
+                case 'ajout':
+    
+                $email = $_SESSION['email'];
+                $marque = $_POST['marque'];
+                $matricule = $_POST['tel1'];
+                $nb_personne = $_POST['nb_personne'];
+            
+                    
+                DbUtilisateur::ajoutVehicule($marque, $matricule, $nb_personne, $email);
+                echo "<script>window.location.replace('index.php?ctl=utilisateur&action=listerUtilisateur');</script>";
+    
+                break;
+            
+                
+    
+                case 'validedit':
+    
+                    $email = $_SESSION['email'];
+                    $marque = $_POST['marque'];
+                    $matricule = $_POST['matricule'];
+                    $nb_personne = $_POST['nb_personne'];
+                    $id = $_POST['idvehicule'];
+                    $listeVehicule = DbUtilisateur::getListeVehicule($email);
+                    
+                    DbUtilisateur::validedit($matricule, $nb_personne, $marque, $id);
+                    echo "<script>window.location.replace('index.php?ctl=utilisateur&action=listerUtilisateur');</script>";
+                    
+    
+                break;
+
+                
+                case 'validRecherche':
+                            
+                    if(isset($_POST['d']) AND !empty($_POST['d']))
+                    {
+                        $recherche = htmlspecialchars($_POST['d']);
+                        $Search = DbUtilisateur::getRechercherDepart($recherche);
+                        include 'vue/vueRecherche/formRecherche.php';
+                        break;
+                        
+                    }
+                    
+                    if (isset($_POST['a']) AND !empty($_POST['a']))
+                    {
+                        $rechercheArrive = htmlspecialchars($_POST['a']);
+                        $Search = DbUtilisateur::getRechercherArrivee($rechercheArrive);
+                        include 'vue/vueRecherche/formRecherche.php';
+                        break;
+                    }
+    
+                    if (isset($_POST['date']) AND !empty($_POST['date']))
+                    {
+                        echo $_POST['date'];
+                        $rechercheDate = htmlspecialchars($_POST['date']);
+                        $Search = DbUtilisateur::getRechercherDate($rechercheDate);
+                        include 'vue/vueRecherche/formRecherche.php';
+                        break;
+                    }   
+                    
+                break;
+>>>>>>> Stashed changes
 	}
 
 ?>
