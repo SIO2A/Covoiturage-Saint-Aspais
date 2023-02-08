@@ -3,11 +3,11 @@ include 'connectPdo.php';
 
 class DbReservation{
 
-    public static function ajoutReservation($email)
+    public static function ajoutReservation($id)
     {
-        $sql = "INSERT INTO reservation (idreservation, iduser) VALUES (NULL, (SELECT iduser
+        $sql = "INSERT INTO reservation (idreservation, iduser, idannonce) VALUES (NULL, (SELECT iduser
         FROM utilisateurs
-        WHERE email='$email'));";
+        WHERE iduser='$id'), (SELECT idannonce from annonce WHERE iduser = '$id');";
         connectPdo::getObjPdo()->exec($sql);
     }
 

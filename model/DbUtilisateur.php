@@ -19,18 +19,28 @@ class DbUtilisateur{
 		return $result;
 	}
 
-	public static function getListeVehicule($email)
+	public static function ajoutVehicule($matricule, $marque, $nb_personne, $email)
+    {
+        $sql = "INSERT INTO vehicule (idvehicule, matricule, marque, nb_personne, iduser) VALUES (NULL, '$marque', '$matricule', '$nb_personne',
+        (SELECT iduser
+        FROM utilisateurs
+        WHERE email='$email'));";
+        connectPdo::getObjPdo()->exec($sql);
+    }
+
+    public static function getListedbVehicule($email)
 	{
-		$sql = "select marque, matricule, nb_personne from utilisateurs, vehicule WHERE vehicule.iduser = utilisateurs.iduser AND email='$email' ";		
+		$sql = "select marque, modele from dbvehicule";		
 		$objResultat = connectPdo::getObjPdo()->query($sql);
 		$result = $objResultat->fetchAll(); 
 		return $result;
 	}
 
-	public static function validedit($marque, $matricule, $nb_personne, $id, $email)
+	public static function validedit($marque, $matricule, $nb_personne, $idvehicule)
 	{
-		$sql = "UPDATE vehicule SET marque = '$marque', matricule = '$matricule', nb_personne = '$nb_personne' WHERE vehicule.iduser = '$id' ";			
-		$objResultat = connectPdo::getObjPdo()->query($sql);
+		$sql = "UPDATE vehicule SET marque = '$marque', matricule = '$matricule', nb_personne = '$nb_personne' WHERE idvehicule = '$idvehicule';";	
+		echo $sql;
+		$objResultat = connectPdo::getObjPdo()->exec($sql);
 	}
 
 	public static function getRechercherDepart($recherche)
@@ -54,6 +64,13 @@ class DbUtilisateur{
 		$sql = "SELECT * FROM annonce WHERE jour >= '$rechercheDate';";
 		$objResultat = connectPdo::getObjPdo()->query($sql);	
 		$result = $objResultat->fetchAll();
+		return $result;
+	}
+	public static function getListeVehicule($email)
+	{
+		$sql = "select vehicule.* from utilisateurs, vehicule WHERE vehicule.iduser = utilisateurs.iduser AND email='$email'; ";		
+		$objResultat = connectPdo::getObjPdo()->query($sql);
+		$result = $objResultat->fetchAll(); 
 		return $result;
 	}
 }

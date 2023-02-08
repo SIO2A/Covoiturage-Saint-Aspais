@@ -90,6 +90,38 @@ switch($action){
                     }   
                     
                 break;
+
+                case 'formajouter' :
+                    $email = $_SESSION['email'];
+                    $listeVehicule = DbUtilisateur::getListedbVehicule($email);
+                    include 'FormVehicule/ajtform.php'; 
+                break;
+    
+                case 'ajout':
+    
+                $email = $_SESSION['email'];
+                $marque = $_POST['marque'];
+                $matricule = $_POST['tel1'];
+                $nb_personne = $_POST['nb_personne'];
+            
+                    
+                DbUtilisateur::ajoutVehicule($marque, $matricule, $nb_personne, $email);
+                echo "<script>window.location.replace('index.php?ctl=utilisateur&action=listerUtilisateur');</script>";
+    
+                break;
+
+                case 'validedit':
+                    $email = $_SESSION['email'];
+                    $idvehicule = $_POST['idvehicule'];
+                    $marque = $_POST['marque'];
+                    $matricule = $_POST['matricule'];
+                    $nb_personne = $_POST['nb_personne'];
+                    DbUtilisateur::validedit($marque, $matricule, $nb_personne, $idvehicule);
+                    $listeVehicule = DbUtilisateur::getListeVehicule($email);
+                    $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
+                    include 'vue/vueUtilisateur/list_utilisateurs.php';
+                    
+                break;
 	}
 
 ?>

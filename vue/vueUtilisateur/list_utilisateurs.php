@@ -164,12 +164,17 @@ body {
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Éditer mon véhicule</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form action="index.php?ctl=utilisateur&action=validEdit" method="POST">
         <div class="modal-body">
           <p class="pmodal">Choisissez la colonne que vous voulez modifier ci-dessous.</p>
-          <input type="text" name = "iduser" class="form-control" readonly value=<?php echo $ligne['idvehicule']; ?>>
-          <p class="marque">Marque : </p><input type="text" name = "marque" class="form-control" placeholder="<?php echo $ligne['marque']; ?>">
-          <p class="matricule">Matricule : </p><input type="text" name = "matricule" class="form-control" placeholder="<?php echo $ligne['matricule']; ?>">
-          <p class="nb_personne">Nombre de Places :</p><input type="text" name ="nb_personne" placeholder="<?php echo $ligne['nb_personne']?>">
+          <p class="marque">id : </p><input type="text" name = "idvehicule" class="form-control" value=<?php
+          foreach($listeVehicule as $ligne){ echo $ligne['idvehicule'];} ?>>
+          <p class="marque">marque : </p><input type="text" name = "marque" class="form-control" value=<?php
+          foreach($listeVehicule as $ligne){ echo $ligne['marque']; }?>>
+          <p class="marque">Matricule : </p><input type="text" name = "matricule" class="form-control" value=<?php
+          foreach($listeVehicule as $ligne){ echo $ligne['matricule']; }?>>
+          <p class="marque">Nombre personne : </p><input type="text" name = "nb_personne" class="form-control" value=<?php
+          foreach($listeVehicule as $ligne){echo $ligne['nb_personne']; }?>>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -179,6 +184,6 @@ body {
     </div>
   </div>
 </form>
-    <a class="btn btn-primary" data-mdb-toggle="offcanvas" href='index.php?ctl=vehicule&action=formajouter' role="button"
+    <a class="btn btn-primary" data-mdb-toggle="offcanvas" href='index.php?ctl=utilisateur&action=formajouter' role="button"
   aria-controls="offcanvasExample">Ajouter un véhicule
 </a>

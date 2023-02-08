@@ -25,7 +25,7 @@
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
-						<form action="index.php?ctl=vehicule&action=ajout" method ='POST'>
+						<form action="index.php?ctl=utilisateur&action=ajout" method ='POST'>
 							<div class="form-group text-white">
 								<label for="nomVéhicule">Ajouter un véhicule : </label>
 								<input type="text" list="form-select" class="form-control" placeholder="Selectionnez votre véhicule" name="marque">

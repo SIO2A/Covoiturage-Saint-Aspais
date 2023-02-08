@@ -7,8 +7,8 @@ switch($action){
 
             case 'ajout':
                 
-            $email = $_SESSION['email'];
-            DbReservation::ajoutReservation($email);
+            $id = $_SESSION['iduser'];
+            DbReservation::ajoutReservation($id);
             header('location: index.php?ctl=annonce&action=lister');
 
             break;

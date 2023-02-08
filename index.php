@@ -13,9 +13,6 @@ if(isset($_GET['ctl']))
 
 				break;
 
-			case 'vehicule' :
-				include 'controleur/ctlVehicule.php';
-
 				break;
 			
 			case 'annonce' :
