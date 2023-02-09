@@ -145,10 +145,9 @@
                 <div class="px-3 pt-3">
                     <h3 class="name">
                         <?php
-                        echo "lieu de depart : ".$ligne[1]."<br>";
-                        echo "lieu d'arrivé : ".$ligne[2]."<br>";
-                        echo "jour : ".$ligne[3]."<br>";
-                        echo "nombre de place : ".$ligne[4]."<br>";
+                        echo "lieu de depart : ".$ligne['depart']."<br>";
+                        echo "lieu d'arrivé : ".$ligne['arriver']."<br>";
+                        echo "jour : ".$ligne['jour']."<br>";
 
                         ?>
                     </h3>

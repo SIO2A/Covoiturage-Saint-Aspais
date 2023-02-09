@@ -13,7 +13,7 @@ if(isset($_GET['ctl']))
 
 				break;
 
-				break;
+
 			
 			case 'annonce' :
 				include 'controleur/ctlAnnonce.php';

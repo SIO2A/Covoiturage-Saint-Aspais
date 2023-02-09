@@ -7,8 +7,10 @@ switch($action){
 
             case 'ajout':
                 
-            $id = $_SESSION['iduser'];
-            DbReservation::ajoutReservation($id);
+            $email = $_SESSION['email'];
+            $idannonce = $_GET['idannonce'];
+            $nb_place = $_GET['nb_place'];
+            DbReservation::ajoutReservation($email, $idannonce, $nb_place);
             header('location: index.php?ctl=annonce&action=lister');
 
             break;
@@ -16,9 +18,9 @@ switch($action){
             case 'lister':
 
 
-                $id = $_SESSION['iduser'];
+                $email = $_SESSION['email'];
                 //appel à la base de donnée le modele
-                $listeReservation = DbReservation::getListeReservation($id);
+                $listeReservation = DbReservation::getListeReservation($email);
                 
                 //appel à la vue
                 include 'vue/vueReservation/list_reservation.php';

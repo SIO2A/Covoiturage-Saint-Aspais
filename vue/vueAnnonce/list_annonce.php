@@ -135,6 +135,7 @@
 
 <?php
     foreach($listeAnnonce as $ligne){
+        if($ligne['nb_place']>0){
 ?>
         <div class="col-md-4">
 
@@ -145,11 +146,12 @@
                 <div class="px-3 pt-3">
                     <h3 class="name">
                         <?php
-                        echo "lieu de depart : ".$ligne[1]."<br>";
-                        echo "lieu d'arrivé : ".$ligne[2]."<br>";
-                        echo "jour : ".$ligne[3]."<br>";
-                        echo "nombre de place : ".$ligne[4]."<br>";
+                        echo "lieu de depart : ".$ligne['depart']."<br>";
+                        echo "lieu d'arrivé : ".$ligne['arriver']."<br>";
+                        echo "jour : ".$ligne['jour']."<br>";
+                        echo "nombre de place : ".$ligne['nb_place']."<br>";
 
+                        
                         ?>
                     </h3>
                 <div class="d-flex justify-content-end">
@@ -158,7 +160,7 @@
                     <img src="https://img.icons8.com/bubbles/50/000000/short-hair-girl-question-mark.png" width="20" class="img3" />
                 </div>
                 </div>
-                <a class="btn btn-primary" data-mdb-toggle="offcanvas" href='index.php?ctl=reservation&action=ajout' role="button"
+                <a class="btn btn-primary" data-mdb-toggle="offcanvas" href='index.php?ctl=reservation&action=ajout&idannonce=<?=$ligne['idannonce']?>&nb_place=<?=$ligne['nb_place']?>' role="button"
                 aria-controls="offcanvasExample">Accepter
 </a>
             </div>
@@ -174,3 +176,6 @@
     </div>
     
 </div>
+<?php
+}
+?>
