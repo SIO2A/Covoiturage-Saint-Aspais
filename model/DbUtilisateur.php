@@ -45,7 +45,7 @@ class DbUtilisateur{
 
 	public static function getRechercherDepart($recherche)
 	{
-		$sql = "SELECT depart, arriver, jour, nb_place FROM annonce WHERE depart LIKE '%$recherche%'";
+		$sql = "SELECT idannonce, depart, arriver, jour, nb_place FROM annonce WHERE depart LIKE '%$recherche%'";
 		$objResultat = connectPdo::getObjPdo()->query($sql);	
 		$result = $objResultat->fetchAll();
 		return $result;
@@ -53,7 +53,7 @@ class DbUtilisateur{
 
 	public static function getRechercherArrivee($rechercheArrive)
 	{
-		$sql = "SELECT depart, arriver, jour, nb_place FROM annonce WHERE arriver LIKE '%$rechercheArrive%'";
+		$sql = "SELECT idannonce, depart, arriver, jour, nb_place FROM annonce WHERE arriver LIKE '%$rechercheArrive%'";
 		$objResultat = connectPdo::getObjPdo()->query($sql);	
 		$result = $objResultat->fetchAll();
 		return $result;
