@@ -8,7 +8,7 @@ body {
   <?php
   if(isset($_SESSION['email']) && !isset($_GET['action']))
   {
-    include 'vueRecherche/formRecherche.php';
+    include 'vue/vueRecherche/formRecherche.php';
     include 'vueMaps/carte.php';
   }
   ?>

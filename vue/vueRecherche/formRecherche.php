@@ -154,7 +154,7 @@
 
                   <div class="form-group">
                      <label for="query">Date de départ</label>
-                     <input type="datetime-local" class="form-control" name="date" id="date" placeholder="./../...">
+                     <input type="datetime-local" class="form-control" name="date" id="date" placeholder="">
                   </div>
 
 
@@ -187,6 +187,7 @@
                         //{
                         foreach ($Search As $ligne)
                         {
+                           if($ligne['nb_place']>0){
                      ?>
                         <!--<h2><//?php echo "".$ligne['depart'].'  '.$ligne['arriver'].'  '. $ligne['jour'].'  '.$ligne['nb_place']; ?></h2>-->
                         <div class="col-md-4">
@@ -226,6 +227,8 @@
 
                      <?php
                         }
+                     
+                     }
                         //}
                         //else
                         //{

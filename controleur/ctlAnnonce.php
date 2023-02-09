@@ -29,7 +29,7 @@ switch($action){
                 $listeAnnonce = DbAnnonce::getListeAnnonce();
                 
                 //appel à la vue
-                include 'vue/vueAnnonce/list_annonce.php';
+                include 'vue/vueRecherche/formRecherche.php';
                 
                 break;
 
