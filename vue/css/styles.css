@@ -173,7 +173,7 @@
     }
 
     h6#np{
-        margin-left: 30px;
+        margin-left: 16px;
         margin-top: 2px;
         color: #fff;   
     }
@@ -208,13 +208,19 @@
         margin-top: 5%;
     }
 
-    /* La Carte */
+    p.pmodal {
+        font-size: 15px;
+        font-weight: 700;
+    }
 
-    #map {
-        height: 100%;
-      }
-      
-
+    p.matricule {
+        margin-top: 10px;
+    }
+    
+    p.nb_personne {
+        margin-top: 10px;
+    }
+    
     /* responsive */
 
     @media screen and (max-width: 1050px){

@@ -13,10 +13,14 @@ if(isset($_GET['ctl']))
 
 				break;
 
-			case 'vehicule' :
-				include 'controleur/ctlVehicule.php';
 
-				break;	
+			
+			case 'annonce' :
+				include 'controleur/ctlAnnonce.php';
+
+				break;
+			case 'reservation' :
+				include 'controleur/ctlReservation.php';
 		}
 
 }
