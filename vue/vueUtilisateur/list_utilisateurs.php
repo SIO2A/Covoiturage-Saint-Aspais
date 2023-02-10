@@ -103,7 +103,10 @@ body {
                         <?php
                         foreach($listeVehicule as $ligne){
                         echo "<tr>";
-                        echo "<td>".$ligne['marque']."</td><br>";
+                        echo "<td>".$ligne['marque']."</td>";
+                  
+                        echo 
+                        "<a href=index.php?ctl=utilisateur&action=formedit&idvehicule=".$ligne['idvehicule']."><img src='./vue/images/editer.png' style='width:4%; margin-left:1%; margin-bottom:1%;'></a><br>";
                         echo "</tr>";
                         }
                         ?>
@@ -147,43 +150,8 @@ body {
           </div>
         </div>
     </div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" href='index.php?ctl=vehicule&action=formajouter' data-bs-target="#staticBackdrop" style="
-    margin-left: 60%;
-    margin-top: 10px;
-">
-Éditer mon véhicule
-</button>
 
-<!-- Modal -->
-<form action="index.php?ctl=utilisateur&action=validedit" method='POST'>
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Éditer mon véhicule</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form action="index.php?ctl=utilisateur&action=validEdit" method="POST">
-        <div class="modal-body">
-          <p class="pmodal">Choisissez la colonne que vous voulez modifier ci-dessous.</p>
-          <p class="marque">id : </p><input type="text" name = "idvehicule" class="form-control" value=<?php
-          foreach($listeVehicule as $ligne){ echo $ligne['idvehicule'];} ?>>
-          <p class="marque">marque : </p><input type="text" name = "marque" class="form-control" value=<?php
-          foreach($listeVehicule as $ligne){ echo $ligne['marque']; }?>>
-          <p class="marque">Matricule : </p><input type="text" name = "matricule" class="form-control" value=<?php
-          foreach($listeVehicule as $ligne){ echo $ligne['matricule']; }?>>
-          <p class="marque">Nombre personne : </p><input type="text" name = "nb_personne" class="form-control" value=<?php
-          foreach($listeVehicule as $ligne){echo $ligne['nb_personne']; }?>>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-          <button type="submit" class="btn btn-primary">Confirmer</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<form action="index.php?ctl=utilisateur&action=formajouter" method ="post">
+  <button class="btn btn-primary" type="submit" id="ajtv">Ajouter un véhicule</button>
 </form>
-    <a class="btn btn-primary" data-mdb-toggle="offcanvas" href='index.php?ctl=utilisateur&action=formajouter' role="button"
-  aria-controls="offcanvasExample">Ajouter un véhicule
-</a>
+

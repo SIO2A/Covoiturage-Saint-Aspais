@@ -96,6 +96,12 @@ switch($action){
                     $listeVehicule = DbUtilisateur::getListedbVehicule($email);
                     include 'FormVehicule/ajtform.php'; 
                 break;
+
+                case 'formedit' :
+                    $idvehicule = $_GET['idvehicule'];
+                    $editvehicule = DbUtilisateur::getVehicule($idvehicule);
+                    include 'FormVehicule/edit.php'; 
+                break;
     
                 case 'ajout':
     
