@@ -40,11 +40,16 @@ include 'vueUtilisateur/v_formulaire.php';
                      <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                     <?php
+                  <?php
                      if(isset($_SESSION['email'])){
                      ?>
                      <li role="presentation"><a class= "nav-link" href='index.php?ctl=utilisateur&action=listerUtilisateur'>Mon Profil</a></li>
-                     <li role="presentation"><a class= "nav-link" href='index.php?ctl=vehicule&action=formajouter'>Ajouter un Véhicule</a></li>
+                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Annonces</a>
+                        <div class="dropdown-menu">
+                           <a class="dropdown-item" href="index.php?ctl=annonce&action=formajouter">Créer une annonce</a>
+                           <a class="dropdown-item" href="index.php?ctl=annonce&action=lister">trajets disponibles</a>
+                           <a class="dropdown-item" href="index.php?ctl=reservation&action=lister">Mes réservations</a>
+                        </div>
                      <?php
                      }
                      ?>

@@ -26,7 +26,8 @@ switch($action){
                 if(is_array($user))
                 {
                     $_SESSION['prenom'] = $user['prenom'];
-                    $_SESSION['email']=$email;
+                    $_SESSION['email']=$user['email'];
+                    $_SESSION['iduser'] = $user['iduser'];
                     header('Location: index.php');
                 }
                 else
@@ -60,59 +61,6 @@ switch($action){
                 include 'vue/vueUtilisateur/list_utilisateurs.php';
                 break;
 
-<<<<<<< Updated upstream
-            case 'validedit':
-                $email = $_SESSION['email'];
-                $id = $_POST['iduser'];
-                $marque = $_POST['marque'];
-                $matricule = $_POST['matricule'];
-                $nb_personne = $_POST['nb_personne'];
-                DbUtilisateur::validedit($marque, $matricule, $nb_personne, $id, $email);
-                $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
-                $listeVehicule = DbUtilisateur::getListeVehicule($email);
-                include 'vue/vueUtilisateur/list_utilisateurs.php';
-                
-            break;
-
-=======
-
-                case 'formajouter' :
-                    $email = $_SESSION['email'];
-                    $listeVehicule = DbUtilisateur::getListedbVehicule($email);
-                    include 'FormVehicule/ajtform.php'; 
-                break;
-    
-                case 'ajout':
-    
-                $email = $_SESSION['email'];
-                $marque = $_POST['marque'];
-                $matricule = $_POST['tel1'];
-                $nb_personne = $_POST['nb_personne'];
-            
-                    
-                DbUtilisateur::ajoutVehicule($marque, $matricule, $nb_personne, $email);
-                echo "<script>window.location.replace('index.php?ctl=utilisateur&action=listerUtilisateur');</script>";
-    
-                break;
-            
-                
-    
-                case 'validedit':
-    
-                    $email = $_SESSION['email'];
-                    $marque = $_POST['marque'];
-                    $matricule = $_POST['matricule'];
-                    $nb_personne = $_POST['nb_personne'];
-                    $id = $_POST['idvehicule'];
-                    $listeVehicule = DbUtilisateur::getListeVehicule($email);
-                    
-                    DbUtilisateur::validedit($matricule, $nb_personne, $marque, $id);
-                    echo "<script>window.location.replace('index.php?ctl=utilisateur&action=listerUtilisateur');</script>";
-                    
-    
-                break;
-
-                
                 case 'validRecherche':
                             
                     if(isset($_POST['d']) AND !empty($_POST['d']))
@@ -142,7 +90,38 @@ switch($action){
                     }   
                     
                 break;
->>>>>>> Stashed changes
+
+                case 'formajouter' :
+                    $email = $_SESSION['email'];
+                    $listeVehicule = DbUtilisateur::getListedbVehicule($email);
+                    include 'FormVehicule/ajtform.php'; 
+                break;
+    
+                case 'ajout':
+    
+                $email = $_SESSION['email'];
+                $marque = $_POST['marque'];
+                $matricule = $_POST['tel1'];
+                $nb_personne = $_POST['nb_personne'];
+            
+                    
+                DbUtilisateur::ajoutVehicule($marque, $matricule, $nb_personne, $email);
+                echo "<script>window.location.replace('index.php?ctl=utilisateur&action=listerUtilisateur');</script>";
+    
+                break;
+
+                case 'validedit':
+                    $email = $_SESSION['email'];
+                    $idvehicule = $_POST['idvehicule'];
+                    $marque = $_POST['marque'];
+                    $matricule = $_POST['matricule'];
+                    $nb_personne = $_POST['nb_personne'];
+                    DbUtilisateur::validedit($marque, $matricule, $nb_personne, $idvehicule);
+                    $listeVehicule = DbUtilisateur::getListeVehicule($email);
+                    $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
+                    include 'vue/vueUtilisateur/list_utilisateurs.php';
+                    
+                break;
 	}
 
 ?>
