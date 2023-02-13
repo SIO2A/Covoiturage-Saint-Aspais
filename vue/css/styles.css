@@ -158,7 +158,6 @@
     }
 
     button#ajtv {
-        margin-left: 59%;
         margin-top: 1%;
     }
 
@@ -192,6 +191,12 @@
     hr{
         border: 0.5px solid white;
     }
+
+
+    h2#NP{
+        color: white;
+    }
+
 
     p#NP{
         margin-left: 72px;

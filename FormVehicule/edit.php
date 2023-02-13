@@ -8,6 +8,7 @@
                     <div class="col-sm-9 text-white">
 					<form action="index.php?ctl=utilisateur&action=validedit" method ='POST'>
 							<div>
+							<p class="marque">Id :</p>
 							<input type="text" name = "idvehicule" class="form-control" value=<?php echo $editvehicule['idvehicule']; ?>>
 							<input type="text" name = "marque" class="form-control" value=<?php echo $editvehicule['marque']; ?>>
 								<p class="marque">Matricule : </p><input type="text" name = "matricule" class="form-control" value=<?php

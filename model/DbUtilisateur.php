@@ -76,7 +76,7 @@ class DbUtilisateur{
 
 	public static function getVehicule($idvehicule)
 	{
-		$sql = "select * from vehicule where idvehicule = $idvehicule";	
+		$sql = "select * from vehicule where idvehicule = '$idvehicule'";	
 		$objResultat = connectPdo::getObjPdo()->query($sql);
 		$result = $objResultat->fetch(); 
 		return $result;

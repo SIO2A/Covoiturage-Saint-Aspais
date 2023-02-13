@@ -53,8 +53,6 @@ switch($action){
                 //appel à la base de donnée le model
                 $email = $_SESSION['email'];
                 $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
-                
-                $email = $_SESSION['email'];
                 $listeVehicule = DbUtilisateur::getListeVehicule($email);
                 
                 //appel à la vue
