@@ -38,8 +38,7 @@ class DbUtilisateur{
 
 	public static function validedit($marque, $matricule, $nb_personne, $idvehicule)
 	{
-		$sql = "UPDATE vehicule SET marque = '$marque', matricule = '$matricule', nb_personne = '$nb_personne' WHERE idvehicule = '$idvehicule';";	
-		echo $sql;
+		$sql = "UPDATE vehicule SET marque = '$marque', matricule = '$matricule', nb_personne = '$nb_personne' WHERE idvehicule = '$idvehicule';";
 		$objResultat = connectPdo::getObjPdo()->exec($sql);
 	}
 

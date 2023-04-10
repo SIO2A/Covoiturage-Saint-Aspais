@@ -1,21 +1,37 @@
-<div class="col-md-8">
+<div class="col-md-6" id="clnModif">
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
-					  <p class="pmodal" style="text-center">Choisissez la colonne que vous voulez modifier ci-dessous.</p>
-                    <div class="col-sm-3">
+					  <h5 class="text-white" style="text-align: center;padding: 2%;">Choisissez la colonne que vous voulez modifier ci-dessous.</h5>
+                    <div class="col-sm-1">
                     </div>
                     <div class="col-sm-9 text-white">
 					<form action="index.php?ctl=utilisateur&action=validedit" method ='POST'>
 							<div>
-							<p class="marque">Id :</p>
-							<input type="text" name = "idvehicule" class="form-control" value=<?php echo $editvehicule['idvehicule']; ?>>
-							<input type="text" name = "marque" class="form-control" value=<?php echo $editvehicule['marque']; ?>>
-								<p class="marque">Matricule : </p><input type="text" name = "matricule" class="form-control" value=<?php
-								echo $editvehicule['matricule']; ?>>
-								<p class="marque">Nombre personne : </p><input type="text" name = "nb_personne" class="form-control" value=<?php
-								echo $editvehicule['nb_personne']; ?>>
-								<button type="submit" class="btn btn-primary">Modifier</button>
+								<div>
+									<p hidden class="inpt">Id :
+									<input type="text" name = "idvehicule" class="form-control" disabled value=<?php echo $editvehicule['idvehicule']; ?>></p>
+								</div>
+
+								<div class="grp">
+									<p class="inpt">Marque :</p>
+									<input type="text" name = "marque" class="form-control" value=<?php echo $editvehicule['marque']; ?>>
+								</div>
+
+								<div class="grp">
+									<p class="inpt">Matricule : </p><input type="text" name = "matricule" class="form-control" 
+									value=<?php echo $editvehicule['matricule']; ?>>
+								</div>
+
+								<div class="grp">
+									<p class="inpt">Nombre personne : </p><input type="text" name = "nb_personne" class="form-control" 
+									value=<?php echo $editvehicule['nb_personne']; ?>>
+								</div>
+								
+								<div class="btnmodif">
+									<button type="submit" class="btn btn-primary" style="margin: 1%;">Modifier</button>
+									<button type="submit" class="btn btn-primary" style="margin: 1%;">Retour</button>
+								</div>
         					</div>
                     	</div>
                   </div>

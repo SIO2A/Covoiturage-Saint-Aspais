@@ -6,7 +6,7 @@ $action =$_GET['action'];
 switch($action){
 
             case 'formajouter' :
-                include 'FormAnnonce/index.html'; 
+                include 'formAnnonce/index.html'; 
             break;
 
             case 'ajout':

@@ -136,24 +136,24 @@
 <div class="col-5 container " style="margin-top:5%;margin-bottom:10%;">
             <div class="container-fluid mt-3">
 
-               <h1 class="mb-2 text-center">Rechercher un trajet</h1>
+               <h1 class="mb-2 text-center text-white">Rechercher un trajet</h1>
 
                <form action="index.php?ctl=utilisateur&action=validRecherche" method="post">
                   <div class="form-row">
                      <div class="form-group col-sm-6">
-                        <label for="query" style="margin-top: 10%;">Ville de départ</label>
+                        <label for="query" style="margin-top: 10%; color:white;">Ville de départ</label>
                         <input type="text" class="form-control" name='d' id="depart" placeholder="Départ de ...">
                      </div>
 
                      <div class="form-group col-sm-6">
-                        <label for="myPassword" style="margin-top: 10%;">Ville d'arrivée</label>
+                        <label for="myPassword" style="margin-top: 10%; color:white;">Ville d'arrivée</label>
                         <input type="text" class="form-control" name="a" id="arrivee" placeholder="Arrivée à ...">
                      </div>
                   </div>
 
 
                   <div class="form-group">
-                     <label for="query">Date de départ</label>
+                     <label class="text-white" for="query">Date de départ</label>
                      <input type="datetime-local" class="form-control" name="date" id="date" placeholder="">
                   </div>
 

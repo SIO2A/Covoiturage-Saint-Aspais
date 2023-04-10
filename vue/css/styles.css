@@ -231,6 +231,20 @@
         margin-top: 10px;
     }
     
+    .grp {
+        padding: 2%;
+    }
+
+    .btnmodif {
+        padding: 2%;
+        text-align: center;
+    }
+
+    div#clnModif {
+        float: none;
+        margin: auto;
+    }
+    
     /* responsive */
 
     @media screen and (max-width: 1050px){

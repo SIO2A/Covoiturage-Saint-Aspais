@@ -1,6 +1,7 @@
 <style>
 body {
-  background-image: url('https://zupimages.net/up/22/47/0ksr.jpg');
+  background-image: url('https://zupimages.net/up/23/14/9qo5.jpg');
+  background-size: 100%;
 }
 </style>
 
