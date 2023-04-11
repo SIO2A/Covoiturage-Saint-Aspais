@@ -274,7 +274,7 @@ label {
 
 input:invalid {
 	border: red solid 3px;
-  }
+}
 
 @media only screen and (max-width: 480px) {
 	.booking-form>.booking-bg {

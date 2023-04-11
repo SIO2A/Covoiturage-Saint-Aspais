@@ -47,7 +47,7 @@ include 'vueUtilisateur/v_formulaire.php';
                      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Annonces</a>
                         <div class="dropdown-menu">
                            <a class="dropdown-item" href="index.php?ctl=annonce&action=formajouter">Créer une annonce</a>
-                           <a class="dropdown-item" href="index.php?ctl=annonce&action=lister">trajets disponibles</a>
+                           <a class="dropdown-item" href="index.php?ctl=annonce&action=lister">Trajets disponibles</a>
                            <a class="dropdown-item" href="index.php?ctl=reservation&action=lister">Mes réservations</a>
                         </div>
                      <?php

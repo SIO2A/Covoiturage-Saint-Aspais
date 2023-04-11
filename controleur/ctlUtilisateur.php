@@ -96,8 +96,10 @@ switch($action){
                 break;
 
                 case 'formedit' :
+                    $email = $_SESSION['email'];
                     $idvehicule = $_GET['idvehicule'];
                     $editvehicule = DbUtilisateur::getVehicule($idvehicule);
+                    $listeVehicule = DbUtilisateur::getListedbVehicule($email);
                     include 'FormVehicule/edit.php'; 
                 break;
     

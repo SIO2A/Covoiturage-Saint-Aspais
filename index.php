@@ -12,8 +12,6 @@ if(isset($_GET['ctl']))
 				include 'controleur/ctlUtilisateur.php';
 
 				break;
-
-
 			
 			case 'annonce' :
 				include 'controleur/ctlAnnonce.php';

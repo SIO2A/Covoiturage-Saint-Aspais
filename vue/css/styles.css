@@ -236,7 +236,6 @@
     }
 
     .btnmodif {
-        padding: 2%;
         text-align: center;
     }
 
@@ -244,6 +243,12 @@
         float: none;
         margin: auto;
     }
+
+
+    input#inptmod:invalid {
+        border: red solid 3px;
+    }
+
     
     /* responsive */
 
