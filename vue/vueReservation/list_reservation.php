@@ -130,13 +130,15 @@
 }
 </style>
 
-
+<div class="col-md-12 text-white">
+    <h1 style="padding: 3%; text-align: center;">Mes reservation</h1>
+</div>
 
 
 <?php
     foreach($listeReservation as $ligne){
 ?>
-        <div class="col-md-4">
+        <div class="col-md-4"style="display: flex;">
 
                     <div class="">
             <div class="two">
@@ -155,10 +157,14 @@
                     <img src="https://img.icons8.com/bubbles/50/000000/short-curly-hair-girl-musical-notes.png" width="20" class="img1" />
                     <img src="https://img.icons8.com/bubbles/50/000000/girl-and-playing-card.png" width="20" class="img2" />
                     <img src="https://img.icons8.com/bubbles/50/000000/short-hair-girl-question-mark.png" width="20" class="img3" />
+
+                    <a href='index.php?ctl=reservation&action=supprimer&idreservation=<?=$ligne['idreservation']?>&idannonce=<?=$ligne['idannonce']?>&nb_place=<?=$ligne['nb_place']?>'>
+                    <img src='./vue/images/remove.png' style='width: 10%;padding-bottom: 5px;margin-left: 82%;'></a>
+
                 </div>
                 </div>
             </div>
-            </div>
+            </div>  
 <?php
     }
 ?>

@@ -130,7 +130,9 @@
 }
 </style>
 
-
+<div class="col-md-12 text-white">
+    <h1 style="padding: 3%; text-align: center;">Trajet Disponible</h1>
+</div>
 
 
 <?php
@@ -146,6 +148,7 @@
                 <div class="px-3 pt-3">
                     <h3 class="name">
                         <?php
+                        echo "Utilisateur : ".$ligne['iduser']."<br>";
                         echo "lieu de depart : ".$ligne['depart']."<br>";
                         echo "lieu d'arrivé : ".$ligne['arriver']."<br>";
                         echo "jour : ".$ligne['jour']."<br>";

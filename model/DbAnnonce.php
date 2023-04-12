@@ -11,9 +11,9 @@ class DbAnnonce{
         connectPdo::getObjPdo()->exec($sql);
     }
 
-    public static function getListeAnnonce()
+    public static function getListeAnnonce($email)
 	{
-		$sql = "select * from annonce ";		
+		$sql = "SELECT * FROM annonce WHERE iduser != (SELECT iduser from utilisateurs where email = '$email');";
 		$objResultat = connectPdo::getObjPdo()->query($sql);	
 		$result = $objResultat->fetchAll();
 		return $result;
@@ -21,7 +21,7 @@ class DbAnnonce{
 
     public static function supprimerAnnonce($id)
     {
-        $sql = "DELETE FROM annonce WHERE idannonce = $id";
+        $sql = "DELETE FROM annonce WHERE idannonce = '$id';";
         connectPdo::getObjPdo()->exec($sql);
     }
 

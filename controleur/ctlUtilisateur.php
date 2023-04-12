@@ -110,6 +110,18 @@ switch($action){
     
                 break;
 
+                case 'supprimer':
+                    
+                    $idvehicule = $_GET['idvehicule'];
+                    $email = $_SESSION['email'];
+                    
+                    DbUtilisateur::supprimerVehicule($idvehicule);
+                    $listeUtilisateur = DbUtilisateur::getListeUtilisateur($email);
+                    $listeVehicule = DbUtilisateur::getListeVehicule($email);
+                    echo "<script>window.location.replace('index.php?ctl=utilisateur&action=listerUtilisateur');</script>";
+        
+                break;
+
                 case 'validedit':
                     $email = $_SESSION['email'];
                     $idvehicule = $_POST['idvehicule'];

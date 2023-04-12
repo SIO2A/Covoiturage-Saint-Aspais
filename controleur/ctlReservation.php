@@ -15,6 +15,18 @@ switch($action){
 
             break;
 
+            case 'supprimer':
+                    
+                $email = $_SESSION['email'];
+                $idreservation = $_GET['idreservation'];
+                $idannonce = $_GET['idannonce'];
+                $nb_place = $_GET['nb_place'];
+                $listeReservation = DbReservation::getListeReservation($email);
+                
+                DbReservation::supprimerReservation($idreservation, $idannonce, $nb_place);
+                header('location: index.php?ctl=reservation&action=lister');
+            break;
+
             case 'lister':
 
 

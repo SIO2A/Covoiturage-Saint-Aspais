@@ -28,6 +28,12 @@ class DbUtilisateur{
         connectPdo::getObjPdo()->exec($sql);
     }
 
+	public static function supprimerVehicule($idvehicule)
+	{
+		$sql = "DELETE FROM vehicule WHERE idvehicule = $idvehicule";
+		connectPdo::getObjPdo()->exec($sql);
+	}
+
     public static function getListedbVehicule($email)
 	{
 		$sql = "select marque, modele from dbvehicule";		

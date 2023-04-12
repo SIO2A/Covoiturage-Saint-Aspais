@@ -12,10 +12,17 @@ class DbReservation{
 
     public static function getListeReservation($email)
 	{
-		$sql = "select annonce.* from annonce, reservation, utilisateurs WHERE reservation.iduser = utilisateurs.iduser AND utilisateurs.email = '$email';";		
-		$objResultat = connectPdo::getObjPdo()->query($sql);	
+		$sql = "select annonce.*, reservation.* from annonce, reservation, utilisateurs WHERE reservation.iduser = utilisateurs.iduser AND reservation.idannonce = annonce.idannonce AND utilisateurs.email = '$email';";		
+		$objResultat = connectPdo::getObjPdo()->query($sql);
 		$result = $objResultat->fetchAll();
 		return $result;
+	}
+
+    public static function supprimerReservation($idreservation, $idannonce, $nb_place)
+	{
+		$sql = "DELETE FROM reservation WHERE idreservation = $idreservation;
+        UPDATE annonce set nb_place = $nb_place+1 WHERE idannonce = $idannonce ;";
+        connectPdo::getObjPdo()->exec($sql);
 	}
 
 }

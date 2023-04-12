@@ -26,8 +26,8 @@ switch($action){
         
             case 'lister':
                 //appel à la base de donnée le modele
-                $listeAnnonce = DbAnnonce::getListeAnnonce();
-                
+                $email = $_SESSION['email'];
+                $listeAnnonce = DbAnnonce::getListeAnnonce($email);
                 //appel à la vue
                 include 'vue/vueAnnonce/list_annonce.php';
                 
